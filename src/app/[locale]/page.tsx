@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
-
+import Button from '@/components/Button';
 type Props = {
   params: { locale: string };
 };
@@ -23,6 +23,7 @@ export default function IndexPage({ params: { locale } }: Props) {
             <li>{t('Avantages.List.Third')}</li>
           </ul>
         </div>
+        <Button Link='/about' Text={t('Link')} external={false} />
       </div>
     </div>
   );

@@ -11,7 +11,8 @@
         "Second": "Chargement rapide",
         "Third": "SEO friendly (balise generateMetadata en fonction de la langue de navigation)"
       }
-    }
+    },
+    "Link": "Lien"
   },
   "Error": {
     "Title": "Quelque chose a mal tourné!",

@@ -36,3 +36,8 @@ h1 {
 .p-custom {
   @apply text-base sm:text-lg md:text-xl font-normal;
 }
+
+
+.primary-color {
+  @apply bg-orange-600 hover:bg-orange-500;
+}

@@ -11,7 +11,8 @@
         "Second": "Fast to load",
         "Third": "SEO friendly (generateMetadata based on the lang)"
       }
-    }
+    },
+    "Link": "Link"
   },
   "Error": {
     "Title": "Something went wrong!",
