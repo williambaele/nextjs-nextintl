@@ -1,8 +1,6 @@
-// /about/layout.tsx
-
 import { getTranslations } from 'next-intl/server';
 import { ReactNode } from 'react';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { useMessages } from 'next-intl';
 
 type Props = {
   children: ReactNode;
@@ -20,11 +18,7 @@ export async function generateMetadata({
     description: t('MetaDescription'),
   };
 }
-
 //// CHILDREN ////
-export default async function LocaleLayout({ children, params: { locale } }: Props) {
-  // Set the locale for the request to enable static rendering
-  unstable_setRequestLocale(locale);
-
+export default function LocaleLayout({ children, params: { locale } }: Props) {
   return <>{children}</>;
 }
