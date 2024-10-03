@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-
+import Navigation from '@/components/Navigation';
 export default function Example() {
   const h = useTranslations('Navigation');
   const t = useTranslations('AboutPage');
@@ -7,6 +7,7 @@ export default function Example() {
 
   return (
     <>
+    <Navigation/>
       <div className='root-container'>
         <div className='custom-container'>
           <h1 className='h1-custom'>{t('Title')}</h1>
