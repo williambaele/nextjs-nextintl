@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server';
 import { ReactNode } from 'react';
-import { useMessages } from 'next-intl';
 
 type Props = {
   children: ReactNode;
