@@ -1,6 +1,5 @@
 import Button from '@/components/Button';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 
 export default function NotFoundPage() {
   const t = useTranslations('NotFoundPage');
