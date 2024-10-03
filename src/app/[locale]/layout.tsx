@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import {Inter} from 'next/font/google';
+import {Lato} from 'next/font/google';
 import {NextIntlClientProvider} from 'next-intl';
 import {
   getMessages,
@@ -7,10 +7,9 @@ import {
   unstable_setRequestLocale
 } from 'next-intl/server';
 import {ReactNode} from 'react';
-import Navigation from '@/components/Navigation';
 import {routing} from '@/i18n/routing';
 
-const inter = Inter({subsets: ['latin']});
+const inter = Lato({subsets: ['latin'], weight: '400'});
 
 type Props = {
   children: ReactNode;
@@ -21,6 +20,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
 
+//// META DATA ////
 export async function generateMetadata({
   params: {locale}
 }: Omit<Props, 'children'>) {
@@ -47,7 +47,7 @@ export default async function LocaleLayout({
     <html className="h-full" lang={locale}>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <NextIntlClientProvider messages={messages}>
-          <Navigation />
+         
           {children}
         </NextIntlClientProvider>
       </body>

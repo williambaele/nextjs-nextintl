@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -5,18 +6,14 @@ export default function NotFoundPage() {
   const t = useTranslations('NotFoundPage');
 
   return (
-    <div className='bg-[#f7f7f7] h-screen'>
-      <div className='max-w-7xl px-4 flex items-center justify-center h-full mx-auto'>
-        <div className='space-y-4 flex flex-col text-center '>
-          <h1 className='text-3xl font-bold'>{t('Title')}</h1>
-          <p>{t('Description')}</p>
-          <Link
-            href='/'
-            rel='noopener noreferrer'
-            className='px-8 py-3 w-1/2 mx-auto font-semibold rounded bg-[#eb6753] text-white'
-          >
-            {t('Button')}
-          </Link>
+    <div className='h-screen bg-red-200 flex items-center justify-center'>
+      <div className='root-container flex justify-center items-center'>
+        <div className='custom-container'>
+          <div className='max-w-xl flex flex-col items-center justify-center space-y-6 text-center'>
+            <h1 className='h1-custom'>{t('Title')}</h1>
+            <p className='p-custom'>{t('Description')}</p>
+            <Button Link='/' Text={t('Button')} external={false} />
+          </div>
         </div>
       </div>
     </div>
