@@ -1,0 +1,40 @@
+{
+  "IndexPage": {
+    "MetaTitle": "Boilerplate FR",
+    "MetaDescription": "Méta-description de l'exemple de page d'accueil",
+    "Title": "Bienvenue sur cet exemple de page d'accueil!",
+    "Description": "Profitez de la puissance de NextJS et de la simplicité de cet exemple de page d'accueil. Vous pouvez facilement créer un site web multilingue avec cet exemple.",
+    "Avantages": {
+      "Title": "Avantages de ce template",
+      "List": {
+        "First": "Facile à configurer",
+        "Second": "Chargement rapide",
+        "Third": "SEO friendly (balise generateMetadata en fonction de la langue de navigation)"
+      }
+    }
+  },
+  "Error": {
+    "Title": "Quelque chose a mal tourné!",
+    "Description": "Nous avons malheureusement rencontré une erreur. Vous pouvez essayer de recharger la page que vous visitiez.",
+    "Button": "Retour à l'accueil"
+  },
+  "NotFoundPage": {
+    "Title": "Page non trouvée",
+    "Description": "Veuillez vérifier l'adresse dans la barre du navigateur ou utilisez la navigation pour aller vers une page connue.",
+    "Button": "Retour à l'accueil"
+  },
+  "LocaleSwitcher": {
+    "label": "Changer de langue",
+    "locale": "{locale, select, fr {Français} en {Anglais} other {Ελληνικά}}"
+  },
+  "Navigation": {
+    "Home": "Accueil",
+    "About": "À propos"
+  },
+  "About": {
+    "MetaTitle": "À propos",
+    "MetaDescription": "Méta-description à propos",
+    "Title": "À propos de nous",
+    "Description": "À propos de cet exemple de page d'accueil"
+  }
+}
