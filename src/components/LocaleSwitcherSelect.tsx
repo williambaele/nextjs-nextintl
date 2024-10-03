@@ -43,7 +43,7 @@ export default function LocaleSwitcherSelect({
       )}
     >
       <p className='sr-only'>{label}</p>
-      <div className='flex gap-1 items-center outline-none relative justify-start '>
+      <div className='flex gap-1 items-center outline-none relative justify-start w-fit'>
         <select
           className='inline-flex appearance-none bg-transparent focus:outline-none pr-4 w-24'
           defaultValue={defaultValue}
