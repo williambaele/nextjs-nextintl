@@ -10,7 +10,7 @@ type Props = {
 export async function generateMetadata({
   params: { locale },
 }: Omit<Props, 'children'>) {
-  const t = await getTranslations({ locale, namespace: 'About' });
+  const t = await getTranslations({ locale, namespace: 'AboutPage' });
 
   return {
     title: t('MetaTitle'),
