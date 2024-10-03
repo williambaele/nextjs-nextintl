@@ -14,6 +14,17 @@
     },
     "Link": "Link"
   },
+  "AboutPage": {
+    "MetaTitle": "About",
+    "MetaDescription": "Metadescription about EN",
+    "Title": "About us",
+    "Description": "About this boilerplate"
+  },
+  "Navigation": {
+    "Home": "Home",
+    "About": "About",
+    "Link": "Link"
+  },
   "Error": {
     "Title": "Something went wrong!",
     "Description": "We've unfortunately encountered an error.You can try to reload the page you were visiting",
@@ -28,16 +39,5 @@
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, fr {Français} en {English} other {Ελληνικά}}"
-  },
-  "Navigation": {
-    "Home": "Home",
-    "About": "About",
-    "Link": "Link"
-  },
-  "About": {
-    "MetaTitle": "About",
-    "MetaDescription": "Metadescription about EN",
-    "Title": "About us",
-    "Description": "About this boilerplate"
   }
 }

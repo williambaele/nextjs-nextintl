@@ -14,6 +14,17 @@
     },
     "Link": "Lien"
   },
+  "AboutPage": {
+    "MetaTitle": "À propos",
+    "MetaDescription": "Méta-description à propos",
+    "Title": "À propos de nous",
+    "Description": "À propos de cet exemple de page d'accueil"
+  },
+  "Navigation": {
+    "Home": "Accueil",
+    "About": "À propos",
+    "Link": "Lien"
+  },
   "Error": {
     "Title": "Quelque chose a mal tourné!",
     "Description": "Nous avons malheureusement rencontré une erreur. Vous pouvez essayer de recharger la page que vous visitiez.",
@@ -27,16 +38,5 @@
   "LocaleSwitcher": {
     "label": "Changer de langue",
     "locale": "{locale, select, fr {Français} en {Anglais} other {Ελληνικά}}"
-  },
-  "Navigation": {
-    "Home": "Accueil",
-    "About": "À propos",
-    "Link": "Lien"
-  },
-  "About": {
-    "MetaTitle": "À propos",
-    "MetaDescription": "Méta-description à propos",
-    "Title": "À propos de nous",
-    "Description": "À propos de cet exemple de page d'accueil"
   }
 }
