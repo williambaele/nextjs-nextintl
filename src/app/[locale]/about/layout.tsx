@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { ReactNode } from 'react';
+// Needed to force dynamic rendering
 export const dynamic = 'force-dynamic'
 type Props = {
   children: ReactNode;
