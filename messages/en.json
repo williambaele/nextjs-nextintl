@@ -31,7 +31,8 @@
   },
   "Navigation": {
     "Home": "Home",
-    "About": "About"
+    "About": "About",
+    "Link": "Link"
   },
   "About": {
     "MetaTitle": "About",

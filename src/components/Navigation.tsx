@@ -8,7 +8,7 @@ import LocaleSwitcher from './LocaleSwitcher';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import Button from './Button';
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
@@ -44,12 +44,7 @@ export default function Example() {
         </div>
         <div className='lg:flex flex-1 items-center justify-end gap-x-6 hidden'>
           <LocaleSwitcher />
-          <a
-            href='#'
-            className='rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-          >
-            Sign up
-          </a>
+          <Button Link='/about' Text={t('Link')} external={false} />
         </div>
         <div className='flex lg:hidden'>
           <button
@@ -80,12 +75,7 @@ export default function Example() {
                 height={32}
               />
             </Link>
-            <a
-              href='#'
-              className='ml-auto rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-            >
-              Sign up
-            </a>
+            <Button Link='/about' Text={t('Link')} external={false} />
             <button
               type='button'
               onClick={() => setMobileMenuOpen(false)}

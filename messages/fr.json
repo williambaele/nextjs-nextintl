@@ -30,7 +30,8 @@
   },
   "Navigation": {
     "Home": "Accueil",
-    "About": "À propos"
+    "About": "À propos",
+    "Link": "Lien"
   },
   "About": {
     "MetaTitle": "À propos",
