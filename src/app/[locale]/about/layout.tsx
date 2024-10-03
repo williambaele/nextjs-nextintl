@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { ReactNode } from 'react';
-
+export const dynamic = 'force-dynamic'
 type Props = {
   children: ReactNode;
   params: { locale: string };
