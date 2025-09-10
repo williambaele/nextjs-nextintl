@@ -1,4 +1,4 @@
-import Button from '@/components/Button';
+import {Button} from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
 
 export default function NotFoundPage() {
@@ -11,7 +11,7 @@ export default function NotFoundPage() {
           <div className='max-w-xl flex flex-col items-center justify-center space-y-6 text-center'>
             <h1 className='h1-custom'>{t('Title')}</h1>
             <p className='p-custom'>{t('Description')}</p>
-            <Button Link='/' Text={t('Button')} external={false} />
+            <Button>{t('Button')}</Button>
           </div>
         </div>
       </div>

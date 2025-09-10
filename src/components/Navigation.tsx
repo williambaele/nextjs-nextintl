@@ -1,102 +1,215 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Dialog, DialogPanel } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import NavigationLink from './NavigationLink';
-import LocaleSwitcher from './LocaleSwitcher';
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import Link from 'next/link';
-import Button from './Button';
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-];
+import { MenuIcon } from "lucide-react";
 
-export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const t = useTranslations('Navigation');
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import LocaleSwitcher from "./LocaleSwitcher";
+
+const Navigation = () => {
+  const features = [
+    {
+      title: "Dashboard",
+      description: "Overview of your activity",
+      href: "#",
+    },
+    {
+      title: "Analytics",
+      description: "Track your performance",
+      href: "#",
+    },
+    {
+      title: "Settings",
+      description: "Configure your preferences",
+      href: "#",
+    },
+    {
+      title: "Integrations",
+      description: "Connect with other tools",
+      href: "#",
+    },
+    {
+      title: "Storage",
+      description: "Manage your files",
+      href: "#",
+    },
+    {
+      title: "Support",
+      description: "Get help when needed",
+      href: "#",
+    },
+  ];
 
   return (
-    <header className='bg-white'>
-      <nav
-        aria-label='Global'
-        className='mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 px-4'
-      >
-        <div className='flex lg:flex-1'>
-          <Link href='/' className='-m-1.5 p-1.5'>
-            <span className='sr-only'>Your Company</span>
-            <Image
-                alt='Logo'
-                src='/images/nextjs.png'
-                className='h-8 w-auto'
-                width={32}
-                height={32}
-              />
-          </Link>
-        </div>
-        <div className='hidden lg:flex lg:gap-x-12'>
-        <NavigationLink href='/'>{t('Home')}</NavigationLink>
-        <NavigationLink href='/about'>{t('About')}</NavigationLink>
-        </div>
-        <div className='lg:flex flex-1 items-center justify-end gap-x-6 hidden'>
-          <LocaleSwitcher />
-          <Button Link='/about' Text={t('Link')} external={false} />
-        </div>
-        <div className='flex lg:hidden'>
-          <button
-            type='button'
-            onClick={() => setMobileMenuOpen(true)}
-            className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
+    <section className="py-4">
+      <div className="custom-container !py-0">
+        <nav className="flex items-center justify-between">
+          <a
+            href="https://www.shadcnblocks.com"
+            className="flex items-center gap-2"
           >
-            <span className='sr-only'>Open main menu</span>
-            <Bars3Icon aria-hidden='true' className='h-6 w-6' />
-          </button>
-        </div>
-      </nav>
-      <Dialog
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className='lg:hidden'
-      >
-        <div className='fixed inset-0 z-10' />
-        <DialogPanel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-4 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
-          <div className='flex items-center gap-x-6 justify-between'>
-            <Link href='/' className='-m-1.5 p-1.5'>
-              <span className='sr-only'>Your Company</span>
-              <Image
-                alt=''
-                src='/images/nextjs.png'
-                className='h-8 w-auto'
-                width={32}
-                height={32}
-              />
-            </Link>
-            <button
-              type='button'
-              onClick={() => setMobileMenuOpen(false)}
-              className='-m-2.5 rounded-md p-2.5 text-gray-700'
-            >
-              <span className='sr-only'>Close menu</span>
-              <XMarkIcon aria-hidden='true' className='h-6 w-6' />
-            </button>
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
+              className="max-h-8"
+              alt="Shadcn UI Navbar"
+            />
+            <span className="text-lg font-semibold tracking-tighter">
+              Shadcnblocks.com
+            </span>
+          </a>
+          <NavigationMenu className="hidden lg:block">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid w-[600px] grid-cols-2 p-3">
+                    {features.map((feature, index) => (
+                      <NavigationMenuLink
+                        href={feature.href}
+                        key={index}
+                        className="rounded-md p-3 transition-colors hover:bg-muted/70"
+                      >
+                        <div key={feature.title}>
+                          <p className="mb-1 font-semibold text-foreground">
+                            {feature.title}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </NavigationMenuLink>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="#"
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Products
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="#"
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Resources
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="#"
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Contact
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <div className="hidden items-center gap-4 lg:flex">
+            <LocaleSwitcher />
+            <Button>Start for free</Button>
           </div>
-          <div className='mt-6 flow-root'>
-            <div className='-my-6 divide-y divide-gray-500/10'>
-              <div className='space-y-4 py-6 flex flex-col'>
-                <NavigationLink href='/'>{t('Home')}</NavigationLink>
-                <NavigationLink href='/about'>{t('About')}</NavigationLink>
+          <Sheet>
+            <SheetTrigger asChild className="lg:hidden">
+              <Button variant="outline" size="icon">
+                <MenuIcon className="h-4 w-4" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="top" className="max-h-screen overflow-auto">
+              <SheetHeader>
+                <SheetTitle>
+                  <a
+                    href="https://www.shadcnblocks.com"
+                    className="flex items-center gap-2"
+                  >
+                    <img
+                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
+                      className="max-h-8"
+                      alt="Shadcn UI Navbar"
+                    />
+                    <span className="text-lg font-semibold tracking-tighter">
+                      Shadcnblocks.com
+                    </span>
+                  </a>
+                </SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col p-4">
+                <Accordion type="single" collapsible className="mt-4 mb-2">
+                  <AccordionItem value="solutions" className="border-none">
+                    <AccordionTrigger className="text-base hover:no-underline">
+                      Features
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="grid md:grid-cols-2">
+                        {features.map((feature, index) => (
+                          <a
+                            href={feature.href}
+                            key={index}
+                            className="rounded-md p-3 transition-colors hover:bg-muted/70"
+                          >
+                            <div key={feature.title}>
+                              <p className="mb-1 font-semibold text-foreground">
+                                {feature.title}
+                              </p>
+                              <p className="text-sm text-muted-foreground">
+                                {feature.description}
+                              </p>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+                <div className="flex flex-col gap-6">
+                  <a href="#" className="font-medium">
+                    Templates
+                  </a>
+                  <a href="#" className="font-medium">
+                    Blog
+                  </a>
+                  <a href="#" className="font-medium">
+                    Pricing
+                  </a>
+                </div>
+                <div className="mt-6 flex flex-col gap-4">
+                  <div className="flex justify-center">
+                    <LocaleSwitcher />
+                  </div>
+                  <Button variant="outline">Sign in</Button>
+                  <Button>Start for free</Button>
+                </div>
               </div>
-              <div className='py-6'>
-                <LocaleSwitcher />
-              </div>
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
-    </header>
+            </SheetContent>
+          </Sheet>
+        </nav>
+      </div>
+    </section>
   );
-}
+};
+
+export { Navigation };

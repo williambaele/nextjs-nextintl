@@ -1,7 +1,12 @@
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import Button from '@/components/Button';
-import Navigation from '@/components/Navigation';
+import { Button } from '@/components/ui/button';
+import { Navigation } from '@/components/Navigation';
+import { Link } from '@/i18n/routing';
+import { Accordion } from '@/components/ui/accordion';
+import { AccordionItem } from '@/components/ui/accordion';
+import { AccordionTrigger } from '@/components/ui/accordion';
+import { AccordionContent } from '@/components/ui/accordion';
 
 type Props = {
   params: { locale: string };
@@ -27,7 +32,17 @@ export default function IndexPage({ params: { locale } }: Props) {
               <li>{t('Avantages.List.Third')}</li>
             </ul>
           </div>
-          <Button Link='/about' Text={t('Link')} external={false} />
+          <Button>
+            <Link href='/about'>{t('Link')}</Link>
+          </Button>
+          <Accordion type='single' collapsible>
+            <AccordionItem value='item-1'>
+              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It adheres to the WAI-ARIA design pattern.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </>

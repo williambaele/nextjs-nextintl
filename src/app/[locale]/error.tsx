@@ -1,8 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-
+import { Link } from '@/i18n/routing';
 type Props = {
   error: Error;
   reset(): void;
@@ -15,8 +14,8 @@ export default function Error({ error, reset }: Props) {
   const t = useTranslations('Error');
 
   return (
-    <div className='bg-[#f7f7f7]'>
-      <div className='max-w-7xl px-4 flex items-center justify-center'>
+    <div className='bg-[#f7f7f7] h-screen'>
+      <div className='custom-container'>
         <h1 className='text-3xl font-bold'>{t('Title')}</h1>
         <p>{t('Description')}</p>
         <Link
